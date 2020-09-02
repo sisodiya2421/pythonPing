@@ -3,7 +3,7 @@ import awake
 
 application = Flask(__name__)
 
-@application.route('/', methods = ['POST', 'GET'])
+@application.route('/', methods = ['GET'])
 def index():
     if request.method == "POST":
         query = request.form['query']
