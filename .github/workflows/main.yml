@@ -1,20 +1,19 @@
-name: Format python code
-on: push
+name: Trello Issue List
+on:
+  issues:
+    types: [opened]
+env:
+  TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
+  TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
+  TRELLO_USERNAME: ${{ secrets.TRELLO_USERNAME }}
+  
 jobs:
-  autopep8:
+  issue_send:
+    name: Send Issue to Trello
     runs-on: ubuntu-latest
     steps:
+      - name: Running js file to send Issue
       - uses: actions/checkout@v2
-      - name: autopep8
-        uses: peter-evans/autopep8@v1
-        with:
-          args: --recursive --in-place --aggressive --aggressive .
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          commit-message: autopep8 action fixes
-          title: Fixes by autopep8 action
-          body: This is an auto-generated PR with fixes by autopep8.
-          labels: autopep8, automated pr
-          reviewers: sisodiya2421
-          branch: autopep8-patches
+      - uses: sisodiya2421/trello-manage
+        
+        
