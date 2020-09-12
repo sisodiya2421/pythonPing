@@ -12,6 +12,5 @@ jobs:
     name: Send Issue to Trello
     runs-on: ubuntu-latest
     steps:
-      - name: Running js file to send Issue
-      - uses: actions/checkout@v2
+      - name: Runs trello manage
       - uses: sisodiya2421/trello-manage@master
