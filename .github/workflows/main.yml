@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Runs trello manage
-      - uses: sisodiya2421/trello-manage@master
+        uses: sisodiya2421/trello-manage@master
