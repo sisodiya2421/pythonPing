@@ -5,7 +5,6 @@ on:
 env:
   TRELLO_KEY: ${{ secrets.TRELLO_KEY }}
   TRELLO_TOKEN: ${{ secrets.TRELLO_TOKEN }}
-  TRELLO_USERNAME: ${{ secrets.TRELLO_USERNAME }}
   
 jobs:
   issue_send:
@@ -16,3 +15,4 @@ jobs:
         uses: sisodiya2421/trello-manage@master
         with:
           repo-name: ${{ github.repository }}
+          trello-username: ${{ secrets.TRELLO_USERNAME }}
